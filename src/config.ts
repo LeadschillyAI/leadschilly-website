@@ -16,6 +16,8 @@ export const SITE = {
     postalCode: '560016',
     addressCountry: 'IN',
   },
+  cin: 'U62011KA2024PTC196250',
+  gstin: '29AAGCL0812J1ZI',
   email: 'admin@leadschilly.com',
   whatsappDisplay: '080 6217 8859',
   phoneIntl: '+91-80-6217-8859',

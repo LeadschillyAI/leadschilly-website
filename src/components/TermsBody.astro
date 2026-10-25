@@ -18,7 +18,7 @@ const other = india
 <h1>Terms of Service ({india ? 'India' : 'International'})</h1>
 <p><strong>Last updated:</strong> 25 October 2026</p>
 
-<p>These terms are an agreement between {company}, {address} ("Leadschilly", "we", "us"), and the business that signs up for or uses Leadschilly ("you"). They apply to {who}. Businesses {other.text} are covered by our <a href={other.href}>{other.label}</a>. By starting a pilot, paying for a plan or using the Services, you agree to these terms on behalf of your business.</p>
+<p>These terms are an agreement between {company}{india ? ' (CIN U62011KA2024PTC196250)' : ''}, {address} ("Leadschilly", "we", "us"), and the business that signs up for or uses Leadschilly ("you"). They apply to {who}. Businesses {other.text} are covered by our <a href={other.href}>{other.label}</a>. By starting a pilot, paying for a plan or using the Services, you agree to these terms on behalf of your business.</p>
 
 <h2>1. The Services</h2>
 <p>Leadschilly is software for real estate sales teams. It collects leads from the sources you connect, replies to them on WhatsApp and other channels, qualifies them, books site visits and appointments, helps your team follow up, and shows reports. "Services" means the Leadschilly web app (my.leadschilly.com), the Leadschilly Android app when it is available to you, the booking pages and forms we host for you, the AI features, and our support. Features marked "Coming soon" are not part of the Services until we release them.</p>
@@ -115,5 +115,5 @@ const other = india
 <p>We may update these terms. For material changes, we email the account owner at least 30 days before they apply; if you don't agree, you can cancel before then. We send notices to the account owner's email address. You can send notices to admin@leadschilly.com.</p>
 
 <h2>19. Contact and grievances</h2>
-<p>{company}, {address}.<br>Email: <a href="mailto:admin@leadschilly.com">admin@leadschilly.com</a> · WhatsApp: 080 6217 8859</p>
+<p>{company}, {address}.<br>{india && <>CIN: U62011KA2024PTC196250 · GSTIN: 29AAGCL0812J1ZI<br></>}Email: <a href="mailto:admin@leadschilly.com">admin@leadschilly.com</a> · WhatsApp: 080 6217 8859</p>
 {india && <p>Grievance Officer under the Information Technology Act, 2000: Deepanshu Jain, at the address and email above, phone +91 86186 39725. We acknowledge grievances within 48 hours and aim to resolve them within 30 days.</p>}
