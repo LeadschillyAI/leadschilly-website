@@ -1,0 +1,7 @@
+---
+// Text: the app repo's docs/legal/privacy-policy.html (product team), registered office filled in. Have a lawyer review once.
+// Meta's app settings use /privacy-policy-2/; public/_redirects serves this same page at that address.
+import Legal from '../layouts/Legal.astro'
+import html from '../legal/privacy-policy.html?raw'
+---
+<Legal title="Privacy Policy" description="How Leadschilly Technologies Private Limited collects, uses and protects personal data, under India's DPDP Act, 2023." html={html} />

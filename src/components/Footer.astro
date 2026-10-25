@@ -1,0 +1,32 @@
+---
+import { SITE, LINKS, LEGAL } from '../config'
+const year = new Date().getFullYear()
+---
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-cols">
+      <div style="flex: 1 1 340px; gap: 12px;">
+        <img src="/images/logo.png" alt="Leadschilly" width="640" height="126" style="height: 30px; width: auto;">
+        <p style="max-width: 360px;">The AI sales team for real estate firms. Every lead answered, qualified and booked for a site visit.</p>
+      </div>
+      <div style="flex: 0 1 160px;">
+        <span class="footer-head">Product</span>
+        <a href="/#how">How it works</a>
+        <a href="/#discipline">For owners</a>
+        <a href="/pricing/">Pricing</a>
+        <a href="/blog/">Blog</a>
+      </div>
+      <div style="flex: 1 1 240px;">
+        <span class="footer-head">Contact</span>
+        <address>{SITE.address}</address>
+        <a href={LINKS.whatsapp}>WhatsApp {SITE.whatsappDisplay}</a>
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
+      </div>
+      <div style="flex: 1 1 200px;">
+        <span class="footer-head">Legal</span>
+        {LEGAL.map((l) => <a href={l.href}>{l.label}</a>)}
+      </div>
+    </div>
+    <p class="copyright">© {year} {SITE.legalName} Proudly made in India.</p>
+  </div>
+</footer>

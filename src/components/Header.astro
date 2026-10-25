@@ -1,0 +1,26 @@
+---
+import { NAV, LINKS } from '../config'
+const { current } = Astro.props
+---
+<header class="site-header">
+  <div class="wrap">
+    <a class="logo" href="/" aria-label="Leadschilly home"><img src="/images/logo.png" alt="Leadschilly" width="640" height="126"></a>
+    <nav class="nav" aria-label="Main">
+      {NAV.map((n) => <a href={n.href} aria-current={current === n.href ? 'page' : undefined}>{n.label}</a>)}
+    </nav>
+    <div class="header-actions">
+      <a class="login hide-sm" href={LINKS.login}>Log in</a>
+      <a class="btn btn-sm btn-outline hide-sm" href={LINKS.demo}>Book a demo</a>
+      <a class="btn btn-sm btn-primary hide-sm" href={LINKS.trial}>Start free trial</a>
+      <details class="menu">
+        <summary>Menu</summary>
+        <div class="menu-panel">
+          {NAV.map((n) => <a href={n.href}>{n.label}</a>)}
+          <a href={LINKS.login}>Log in</a>
+          <a class="btn btn-outline" href={LINKS.demo}>Book a demo</a>
+          <a class="btn btn-primary" href={LINKS.trial}>Start free trial</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>

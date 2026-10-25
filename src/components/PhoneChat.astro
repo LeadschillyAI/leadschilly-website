@@ -1,0 +1,43 @@
+---
+// Drawn example of a buyer chat on WhatsApp (not a screenshot). Labelled "Example conversation" under it.
+const tick = '<svg width="16" height="11" viewBox="0 0 16 11" fill="none" stroke="#0a6fb8" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 6l3 3 6-7"></path><path d="M6 8l1 1 6-7"></path></svg>'
+---
+<figure class="hero-art" style="margin: 0;">
+  <div class="phone" role="img" aria-label="Example WhatsApp chat: a buyer enquires at 11:42 pm, the AI assistant asks their budget and timeline, and books a site visit for Saturday 11 am.">
+    <span class="btn-side" style="left: -4px; top: 128px; height: 34px; border-radius: 2px 0 0 2px;" aria-hidden="true"></span>
+    <span class="btn-side" style="left: -4px; top: 176px; height: 58px; border-radius: 2px 0 0 2px;" aria-hidden="true"></span>
+    <span class="btn-side" style="left: -4px; top: 246px; height: 58px; border-radius: 2px 0 0 2px;" aria-hidden="true"></span>
+    <span class="btn-side" style="right: -4px; top: 196px; height: 88px; border-radius: 0 2px 2px 0;" aria-hidden="true"></span>
+    <div class="screen" aria-hidden="true">
+      <span class="island"></span>
+      <div class="chat-head">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#29235c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"></path></svg>
+        <span class="avatar">YF</span>
+        <div style="display: flex; flex-direction: column; flex: 1 1 auto; min-width: 0;">
+          <span style="font-size: 15px; font-weight: 700;">Your firm</span>
+          <span style="font-size: 12px; color: var(--good);">online</span>
+        </div>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#29235c" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="14" height="12" rx="2"></rect><path d="M16 10l6-3v10l-6-3"></path></svg>
+      </div>
+      <div class="chat">
+        <span class="chip-day">Today</span>
+        <div class="msg msg-in">Hi, saw your ad. Is the 3BHK still available?<span class="time">11:42 pm</span></div>
+        <div class="msg msg-out"><span class="who">AI assistant</span>Yes, it is. To share the right options, what budget are you looking at?<span class="time">11:42 pm <Fragment set:html={tick} /></span></div>
+        <div class="msg msg-in">Around 1.2 Cr. Planning to move in 6 months.<span class="time">11:44 pm</span></div>
+        <div class="msg msg-out"><span class="who">AI assistant</span>Perfect. Shall I book a site visit for you this Saturday at 11 am?<span class="time">11:44 pm <Fragment set:html={tick} /></span></div>
+        <div class="msg msg-in">Yes, book it.<span class="time">11:45 pm</span></div>
+        <div class="booked">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12l5 5L20 7"></path></svg>
+          Site visit booked · Sat 11:00 am
+        </div>
+      </div>
+      <div class="composer">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#6f6d8a" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12h14"></path></svg>
+        <span class="field">Message</span>
+        <span class="mic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg></span>
+        <span class="home-bar"></span>
+      </div>
+    </div>
+  </div>
+  <figcaption class="small">Example conversation on WhatsApp</figcaption>
+</figure>

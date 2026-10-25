@@ -1,0 +1,105 @@
+---
+import Base from '../layouts/Base.astro'
+import { LINKS, SITE } from '../config'
+
+// Plans and ₹ prices: the product team's pitch deck (marketing/deck/build-deck.cjs, 23 Oct 2026), approved for the site by Deepanshu.
+// USD prices are not set yet (TODO); the $ view shows "Ask us" until they are.
+const plans = [
+  {
+    name: 'Starter', bar: 'bar-magenta', inr: '₹4,999', inrNum: '4999', usd: null, users: 'Up to 3 users',
+    blurb: 'For a small broker team getting every lead answered.',
+    items: ['Lead inbox with WhatsApp on your number', 'Ready-made real estate follow-ups and message templates', 'AI reply to every new lead in seconds', "Owner's morning brief"],
+  },
+  {
+    name: 'Growth', bar: 'bar-blue', inr: '₹14,999', inrNum: '14999', usd: null, users: 'Up to 10 users', featured: true,
+    blurb: 'For teams that want every lead qualified and booked for a visit.',
+    items: ['Everything in Starter', 'All AI agents: qualify buyers and book site visits', 'Calling with recordings', 'Owner dashboard and rep reports'],
+  },
+  {
+    name: 'Pro', bar: 'bar-orange', inr: '₹39,999', inrNum: '39999', usd: null, users: 'Up to 25 users',
+    blurb: 'For larger teams, channel partner networks and developers.',
+    items: ['Everything in Growth', 'Projects and inventory matched to every lead', 'Priority support'],
+    soon: ['Channel partner portal'],
+  },
+]
+const schema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'Leadschilly',
+  applicationCategory: 'BusinessApplication',
+  operatingSystem: 'Web, Android',
+  publisher: { '@id': `${SITE.url}/#organization` },
+  offers: plans.map((p) => ({ '@type': 'Offer', name: p.name, price: p.inrNum, priceCurrency: 'INR', url: `${SITE.url}/pricing/` })),
+}
+---
+<Base title="Pricing: One Price for Your Whole Real Estate Team | Leadschilly" description="Leadschilly plans from ₹4,999 a month plus GST for the whole business, not per user. WhatsApp AI that answers every property lead and books site visits." schema={[schema]} current="/pricing/">
+  <section class="band">
+    <div class="band-inner bg-sky" style="padding: 72px 24px 88px;">
+      <div class="inner stack gap-48">
+        <div class="stack center gap-20">
+          <h1 class="h1" style="font-size: clamp(40px, 4.8vw, 60px);">One price for your whole business</h1>
+          <p class="lead" style="max-width: 640px;">Priced per business, not per user. Prices show in your currency: ₹ in India, $ everywhere else.</p>
+          <div class="switch" role="group" aria-label="Currency">
+            <button type="button" data-cur="INR" aria-pressed="true">India (₹)</button>
+            <button type="button" data-cur="USD" aria-pressed="false">Outside India ($)</button>
+          </div>
+        </div>
+        <div class="row" style="align-items: stretch;">
+          {plans.map((p) => (
+            <div class={p.featured ? 'plan featured' : 'plan'}>
+              <div style="display: flex; align-items: center; justify-content: space-between; gap: 12px;">
+                <span class={`bar ${p.bar}`} aria-hidden="true"></span>
+                {p.featured && <span class="badge-rec">Recommended</span>}
+              </div>
+              <h2>{p.name}</h2>
+              <p class="small" style="font-size: 15px;">{p.blurb}</p>
+              <p class="price">
+                <span class="amt" data-inr={p.inr} data-usd={p.usd ?? 'Ask us'}>{p.inr}</span>
+                <span class="small per" style="font-size: 15px;">/ month</span>
+              </p>
+              <p class="small" style="font-size: 13px;"><span class="tax" >Plus GST</span> · {p.users}</p>
+              <ul>
+                {p.items.map((i) => <li>{i}</li>)}
+                {p.soon?.map((i) => <li>{i} <span class="tag tag-soon" style="font-size: 11px; padding: 2px 8px;">Coming soon</span></li>)}
+              </ul>
+              <a class={p.featured ? 'btn btn-primary' : 'btn btn-outline'} href={LINKS.demo} style="min-height: 52px;">Book a demo</a>
+            </div>
+          ))}
+        </div>
+        <p class="small" style="text-align: center;">No markup on WhatsApp or calls: Meta bills WhatsApp messages at its own rates, and your calling provider bills your calls directly.</p>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 96px 16px;">
+    <div class="cta-block" style="padding: 80px 24px;">
+      <div class="inner" style="gap: 24px;">
+        <h2 style="font-size: clamp(30px, 3.6vw, 48px);">Not sure which plan fits?</h2>
+        <p style="font-size: 18px;">Message us on WhatsApp or book a demo, and we'll help you pick.</p>
+        <div class="btns" style="justify-content: center;">
+          <a class="btn btn-lg btn-white" href={LINKS.demo}>Book a 15-minute demo</a>
+          <a class="btn btn-lg btn-ghost-light" href={LINKS.whatsappHi}>Send "Hi" on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</Base>
+
+<script>
+  // Currency: India time zone shows ₹, everyone else $. The switch lets anyone change it.
+  const buttons = document.querySelectorAll<HTMLButtonElement>('.switch button')
+  function show(cur: string) {
+    buttons.forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.cur === cur)))
+    document.querySelectorAll<HTMLElement>('.amt').forEach((el) => {
+      const v = cur === 'INR' ? el.dataset.inr : el.dataset.usd
+      el.textContent = v ?? ''
+      const per = el.parentElement?.querySelector<HTMLElement>('.per')
+      if (per) per.style.display = v === 'Ask us' ? 'none' : ''
+    })
+    document.querySelectorAll<HTMLElement>('.tax').forEach((el) => { el.textContent = cur === 'INR' ? 'Plus GST' : 'Taxes as applicable' })
+  }
+  let tz = ''
+  try { tz = Intl.DateTimeFormat().resolvedOptions().timeZone } catch {}
+  show(tz === 'Asia/Kolkata' || tz === 'Asia/Calcutta' ? 'INR' : 'USD')
+  buttons.forEach((b) => b.addEventListener('click', () => show(b.dataset.cur!)))
+</script>

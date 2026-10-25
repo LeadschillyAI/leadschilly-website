@@ -1,0 +1,48 @@
+# Old WordPress addresses → new pages. Keeps links and any Google ranking working after the move.
+# Meta's app settings use these two addresses: keep them answering with the page itself (200 = same page, same address).
+/privacy-policy-2/  /privacy-policy/  200
+/privacy-policy-2   /privacy-policy/  200
+
+# Old sitemaps (Search Console may still have them saved)
+/sitemap_index.xml  /sitemap-index.xml  301
+/sitemap.xml        /sitemap-index.xml  301
+/post-sitemap.xml   /sitemap-index.xml  301
+/page-sitemap.xml   /sitemap-index.xml  301
+
+# Old pages with a clear new home
+/contact/                              /#demo  301
+/contact-us/                           /#demo  301
+/leadschilly-about-us-page/            /       301
+/usecase-realestate-sales-teams/       /#who   301
+/use-cases/                            /#who   301
+/home/                                 /       301
+/home-2/                               /       301
+/home-draft/                           /       301
+/home-draft-2/                         /       301
+/home-draft-3/                         /       301
+/sample-page/                          /       301
+/leadschilly-ai-sales-automation/      /       301
+/leadschilly-sales-marketing-automation/ /     301
+/sales-management-platform/            /       301
+/sales-management/                     /       301
+/b2b-marketing-automation/             /       301
+/crm-automation-tool/                  /       301
+/all-in-one-marketing-platform/        /       301
+/marketing-automation-tools/           /       301
+/leadschilly-lead-gen-pro/             /       301
+/leadgen-pro/                          /       301
+/best-b2b-sales/                       /       301
+/customer-centric-tools/               /       301
+/ai-marketing-tools-for-small-business/ /      301
+/best-crm-for-small-businesses/        /       301
+/ai-landing-page-builder/              /       301
+/marketing-funnel-automation/          /       301
+/enterprise-marketing-automation/      /       301
+/content-marketing-automation/         /       301
+/ecommerce-marketing-automation/       /       301
+/best-funnel-builder/                  /       301
+/online-appointment-scheduling-software/ /     301
+/uscase-b2b-sales-teams/               /       301
+/uscase-online-coaches/                /       301
+/usecase-small-businesses/             /       301
+/usecase-digital-marketing-agency/     /       301
