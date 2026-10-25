@@ -58,4 +58,4 @@ npm run dev       # local preview at http://localhost:4321
 npm run build     # builds into dist/
 ```
 
-Cloudflare Pages settings: build command `npm run build`, output folder `dist`, Node 22.
+Cloudflare (Workers & Pages → this repo): build command `npm run build`, deploy command `npx wrangler deploy`. The output folder and 404 page are set in `wrangler.jsonc`.
