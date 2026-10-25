@@ -21,7 +21,7 @@ const other = india
 <p>These terms are an agreement between {company}, {address} ("Leadschilly", "we", "us"), and the business that signs up for or uses Leadschilly ("you"). They apply to {who}. Businesses {other.text} are covered by our <a href={other.href}>{other.label}</a>. By starting a pilot, paying for a plan or using the Services, you agree to these terms on behalf of your business.</p>
 
 <h2>1. The Services</h2>
-<p>Leadschilly is software for real estate sales teams. It collects leads from the sources you connect, replies to them on WhatsApp and other channels, qualifies them, books site visits and appointments, helps your team follow up, and shows reports. "Services" means the Leadschilly web app (my.leadschilly.com), the mobile app, the booking pages and forms we host for you, the AI features, and our support. Features marked "Coming soon" are not part of the Services until we release them.</p>
+<p>Leadschilly is software for real estate sales teams. It collects leads from the sources you connect, replies to them on WhatsApp and other channels, qualifies them, books site visits and appointments, helps your team follow up, and shows reports. "Services" means the Leadschilly web app (my.leadschilly.com), the Leadschilly Android app when it is available to you, the booking pages and forms we host for you, the AI features, and our support. Features marked "Coming soon" are not part of the Services until we release them.</p>
 
 <h2>2. Who can use Leadschilly</h2>
 <ul>
@@ -29,8 +29,8 @@ const other = india
   <li>You are responsible for your account, for the team members you invite and for what they do in it. Keep sign-in details private and tell us at once if you suspect misuse.</li>
 </ul>
 
-<h2>3. Free 30-day pilot</h2>
-<p>We may offer a free pilot of up to 30 days. During the pilot we help you set up your lead sources and WhatsApp number. The pilot is free and does not turn into a paid plan unless you ask for one. Either side can end the pilot at any time. Third-party charges in section 5 still apply during the pilot.</p>
+<h2>3. Free 30-day pilot and free trial</h2>
+<p>We may offer a free pilot of up to 30 days. During the pilot we help you set up your lead sources and WhatsApp number. The pilot is free and does not turn into a paid plan unless you ask for one. Either side can end the pilot at any time. Third-party charges in section 5 still apply during the pilot. If you sign up yourself at my.leadschilly.com instead, you get a 14-day free trial on the same basis.</p>
 
 <h2>4. Plans, fees and payment</h2>
 <ul>
@@ -51,7 +51,7 @@ const other = india
   <li>you follow WhatsApp's Business Messaging and Commerce Policies, and Meta's terms for lead ads and Pages you connect;</li>
   {india
     ? <li>you follow the TRAI rules on commercial communication, including DLT registration for SMS and the National Customer Preference Register (DND) for calls and SMS;</li>
-    : <li>you follow the laws on calls, texts and electronic marketing where your contacts are, such as the TCPA and CAN-SPAM in the US, PECR in the UK and the ePrivacy rules in the EU;</li>}
+    : <li>you follow the laws on calls, texts and electronic marketing where your contacts are, such as the TCPA and CAN-SPAM in the US;</li>}
   <li>you tell people when calls are recorded, where the law requires it;</li>
   <li>your property information is accurate and lawful, including{india ? ' RERA registration numbers and other details that real estate advertising rules require' : ' any licensing or registration details that real estate rules in your market require'}; and</li>
   <li>you don't use Leadschilly to send spam, mislead people, or send unlawful, abusive or infringing content.</li>
@@ -68,9 +68,9 @@ const other = india
 <h2>8. Your data</h2>
 <ul>
   <li>Your business's data, including your leads, contacts, messages and recordings, belongs to you. You give us permission to process it only to provide, secure and support the Services for you.</li>
-  <li>For your leads and contacts, you decide why and how their data is used, and we process it on your instructions. Our <a href="/privacy-policy/">Privacy Policy</a>, <a href="/data-protection/">DPDP page</a> and <a href="/gdpr/">GDPR page</a> explain how we protect it. A data processing agreement is available on request.</li>
+  <li>For your leads and contacts, you decide why and how their data is used, and we process it on your instructions. Our <a href="/privacy-policy/">Privacy Policy</a>, <a href="/data-protection/">DPDP page</a> and <a href="/gdpr/">GDPR page</a> explain how we protect it. A data processing agreement is available for customers who need one: contact admin@leadschilly.com.</li>
   <li>Your main data is stored in India (Mumbai region).</li>
-  <li>You can export your leads at any time from Settings. After an account closes, we delete its data within 90 days, unless the law requires us to keep something longer (for example invoices).</li>
+  <li>You can export your leads at any time from Settings. After an account closes, we delete its data within 90 days, or within 30 days if the account owner asks us to, unless the law requires us to keep some records longer (for example invoices).</li>
   <li>We may use aggregated, de-identified usage information that does not identify you or your contacts to improve the Services.</li>
 </ul>
 
@@ -116,4 +116,4 @@ const other = india
 
 <h2>19. Contact and grievances</h2>
 <p>{company}, {address}.<br>Email: <a href="mailto:admin@leadschilly.com">admin@leadschilly.com</a> · WhatsApp: 080 6217 8859</p>
-{india && <p>Grievance Officer under the Information Technology Act, 2000: Deepanshu Jain, at the address and email above. We acknowledge grievances within 48 hours and aim to resolve them within 30 days.</p>}
+{india && <p>Grievance Officer under the Information Technology Act, 2000: Deepanshu Jain, at the address and email above, phone +91 86186 39725. We acknowledge grievances within 48 hours and aim to resolve them within 30 days.</p>}
