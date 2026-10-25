@@ -11,14 +11,14 @@ const { current } = Astro.props
     <div class="header-actions">
       <a class="login hide-sm" href={LINKS.login}>Log in</a>
       <a class="btn btn-sm btn-outline hide-sm" href={LINKS.demo}>Book a demo</a>
-      <a class="btn btn-sm btn-primary hide-sm" href={LINKS.trial}>Start free trial</a>
+      <a class="btn btn-sm btn-primary hide-sm" href={LINKS.pilot}>Get a free 30-day pilot</a>
       <details class="menu">
         <summary>Menu</summary>
         <div class="menu-panel">
           {NAV.map((n) => <a href={n.href}>{n.label}</a>)}
           <a href={LINKS.login}>Log in</a>
           <a class="btn btn-outline" href={LINKS.demo}>Book a demo</a>
-          <a class="btn btn-primary" href={LINKS.trial}>Start free trial</a>
+          <a class="btn btn-primary" href={LINKS.pilot}>Get a free 30-day pilot</a>
         </div>
       </details>
     </div>

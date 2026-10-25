@@ -30,8 +30,8 @@ export const LINKS = {
   whatsappHi: 'https://wa.me/918062178859?text=Hi',
   whatsapp: 'https://wa.me/918062178859',
   login: 'https://my.leadschilly.com',
-  // TODO: the free-trial / free-pilot decision is open. Points to the app sign-in until then.
-  trial: 'https://my.leadschilly.com',
+  // Free 30-day pilot (decided 25 Oct 2026): sales-led, so it opens a WhatsApp chat with our own AI, not a sign-up.
+  pilot: 'https://wa.me/918062178859?text=' + encodeURIComponent("Hi, I'd like the free 30-day pilot"),
   // TODO: replace with Leadschilly's own public booking page from the app (Calendar → booking link, /b/<link>).
   demo: '/#demo',
 }

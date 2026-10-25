@@ -1,9 +1,9 @@
-// leadschilly.com marketing site. Static pages, published by Cloudflare Pages on every change to the main branch.
+// leadschilly.com marketing site. Static pages, published by Cloudflare (Workers) on every change to the main branch.
 import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
 
 // Legal pages that are still drafts stay out of the sitemap until their text is final.
-const DRAFT_PAGES = ['/terms/', '/terms-international/', '/refund-policy/', '/data-protection/', '/gdpr/', '/tos/']
+const DRAFT_PAGES = ['/terms/', '/terms-international/', '/data-protection/', '/gdpr/', '/tos/']
 
 export default defineConfig({
   site: 'https://leadschilly.com',
