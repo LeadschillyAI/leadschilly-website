@@ -2,8 +2,8 @@
 import { defineConfig } from 'astro/config'
 import sitemap from '@astrojs/sitemap'
 
-// Legal pages that are still drafts stay out of the sitemap until their text is final.
-const DRAFT_PAGES = ['/terms/', '/terms-international/', '/data-protection/', '/gdpr/', '/tos/']
+// Pages listed here stay out of the sitemap (none at the moment).
+const DRAFT_PAGES = []
 
 export default defineConfig({
   site: 'https://leadschilly.com',

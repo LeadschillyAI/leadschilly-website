@@ -1,0 +1,119 @@
+---
+// One set of Terms of Service, rendered for the India company and for the US company.
+// Draft by Claude (25 Oct 2026) for a one-time lawyer review. Change wording here, not in the two pages.
+interface Props {
+  region: 'india' | 'international'
+}
+const { region } = Astro.props
+const india = region === 'india'
+const company = india ? 'Leadschilly Technologies Private Limited' : 'Leadschilly LLC'
+const address = india
+  ? 'WorkFlo, Ranka Junction, Vijinapura Village, KR Puram Hobli, Bengaluru 560016, Karnataka, India'
+  : '30 N Gould St, Ste #3569, Sheridan, Wyoming 82801, USA'
+const who = india ? 'customers whose business is based in India' : 'customers whose business is based outside India'
+const other = india
+  ? { href: '/terms-international/', label: 'Terms of Service (International)', text: 'outside India' }
+  : { href: '/terms/', label: 'Terms of Service (India)', text: 'in India' }
+---
+<h1>Terms of Service ({india ? 'India' : 'International'})</h1>
+<p><strong>Last updated:</strong> 25 October 2026</p>
+
+<p>These terms are an agreement between {company}, {address} ("Leadschilly", "we", "us"), and the business that signs up for or uses Leadschilly ("you"). They apply to {who}. Businesses {other.text} are covered by our <a href={other.href}>{other.label}</a>. By starting a pilot, paying for a plan or using the Services, you agree to these terms on behalf of your business.</p>
+
+<h2>1. The Services</h2>
+<p>Leadschilly is software for real estate sales teams. It collects leads from the sources you connect, replies to them on WhatsApp and other channels, qualifies them, books site visits and appointments, helps your team follow up, and shows reports. "Services" means the Leadschilly web app (my.leadschilly.com), the mobile app, the booking pages and forms we host for you, the AI features, and our support. Features marked "Coming soon" are not part of the Services until we release them.</p>
+
+<h2>2. Who can use Leadschilly</h2>
+<ul>
+  <li>Leadschilly is for businesses, not for personal or household use. The person accepting these terms must have authority to bind the business.</li>
+  <li>You are responsible for your account, for the team members you invite and for what they do in it. Keep sign-in details private and tell us at once if you suspect misuse.</li>
+</ul>
+
+<h2>3. Free 30-day pilot</h2>
+<p>We may offer a free pilot of up to 30 days. During the pilot we help you set up your lead sources and WhatsApp number. The pilot is free and does not turn into a paid plan unless you ask for one. Either side can end the pilot at any time. Third-party charges in section 5 still apply during the pilot.</p>
+
+<h2>4. Plans, fees and payment</h2>
+<ul>
+  <li>Plans are priced per business per month, with the user limit shown on our <a href="/pricing/">pricing page</a> or in your order. Fees are billed monthly in advance{india ? ' in Indian rupees' : ' in US dollars'}.</li>
+  <li>{india ? 'Fees are plus GST, which we show on your invoice.' : 'Fees exclude taxes. You pay any sales, use, VAT, GST or withholding taxes that apply to you, except taxes on our income.'}</li>
+  <li>If a payment fails, we tell you and give you 7 days to fix it before we pause the account. Your data is not deleted because of a paused account.</li>
+  <li>We may change prices with at least 30 days' notice by email. The new price applies from your next billing month after the notice period.</li>
+  <li>Refunds and cancellations follow our <a href="/refund-policy/">Refund Policy</a>.</li>
+</ul>
+
+<h2>5. Charges from other companies</h2>
+<p>Some parts of the Services run on accounts you hold with other companies, under their own terms and prices. Meta bills you directly for WhatsApp Business messages, and your calling and SMS providers bill you for calls and messages. Leadschilly does not add a markup to these charges and is not responsible for their pricing, availability or policies. You need to keep a valid payment method with those providers, or their messages and calls may stop.</p>
+
+<h2>6. Your responsibilities when contacting people</h2>
+<p>Leadschilly sends messages and makes calls on your behalf, so the rules that apply to your marketing and sales apply to how you use it. You agree that:</p>
+<ul>
+  <li>you have the right to contact every person whose details you add or connect, including their consent where the law requires it, and you honour opt-outs and Do Not Disturb requests (Leadschilly marks people who reply "STOP" or similar);</li>
+  <li>you follow WhatsApp's Business Messaging and Commerce Policies, and Meta's terms for lead ads and Pages you connect;</li>
+  {india
+    ? <li>you follow the TRAI rules on commercial communication, including DLT registration for SMS and the National Customer Preference Register (DND) for calls and SMS;</li>
+    : <li>you follow the laws on calls, texts and electronic marketing where your contacts are, such as the TCPA and CAN-SPAM in the US, PECR in the UK and the ePrivacy rules in the EU;</li>}
+  <li>you tell people when calls are recorded, where the law requires it;</li>
+  <li>your property information is accurate and lawful, including{india ? ' RERA registration numbers and other details that real estate advertising rules require' : ' any licensing or registration details that real estate rules in your market require'}; and</li>
+  <li>you don't use Leadschilly to send spam, mislead people, or send unlawful, abusive or infringing content.</li>
+</ul>
+
+<h2>7. AI features</h2>
+<ul>
+  <li>Leadschilly uses AI to reply to leads, ask qualifying questions, suggest messages, summarise calls and chats, and score interest. You choose whether AI agents only draft, ask before sending, or act automatically. New accounts start in "ask first" mode.</li>
+  <li>AI can make mistakes. Check important information, and don't let AI make commitments on price, availability, possession dates, legal or financial matters unless you have set those answers yourself and checked them.</li>
+  <li>You are responsible for the instructions, scripts and property details you give the AI, and for messages sent from your account.</li>
+  <li>Our AI providers commit not to use your data to train their general models. See our <a href="/privacy-policy/">Privacy Policy</a>.</li>
+</ul>
+
+<h2>8. Your data</h2>
+<ul>
+  <li>Your business's data, including your leads, contacts, messages and recordings, belongs to you. You give us permission to process it only to provide, secure and support the Services for you.</li>
+  <li>For your leads and contacts, you decide why and how their data is used, and we process it on your instructions. Our <a href="/privacy-policy/">Privacy Policy</a>, <a href="/data-protection/">DPDP page</a> and <a href="/gdpr/">GDPR page</a> explain how we protect it. A data processing agreement is available on request.</li>
+  <li>Your main data is stored in India (Mumbai region).</li>
+  <li>You can export your leads at any time from Settings. After an account closes, we delete its data within 90 days, unless the law requires us to keep something longer (for example invoices).</li>
+  <li>We may use aggregated, de-identified usage information that does not identify you or your contacts to improve the Services.</li>
+</ul>
+
+<h2>9. Acceptable use</h2>
+<p>You won't, and won't let others: break the law or other people's rights; try to get around security, usage limits or another customer's data; copy, resell or rebuild the Services without our written agreement; reverse engineer them except where the law allows; or overload or disrupt them. We may suspend the part of an account that breaks this section, telling you why where we can.</p>
+
+<h2>10. Availability and support</h2>
+<p>We work to keep Leadschilly available and fast, and we tell you in advance about planned maintenance where we can. The Services depend on the internet and on providers such as Meta, telephony companies and cloud hosts, so we can't promise they will be uninterrupted or error-free. Support is by WhatsApp at 080 6217 8859 and email at admin@leadschilly.com.</p>
+
+<h2>11. Ending the agreement</h2>
+<ul>
+  <li>You can cancel at any time, as set out in the Refund Policy. Your plan stays active until the end of the paid month.</li>
+  <li>We can end the agreement with 30 days' notice, or at once if you seriously or repeatedly break these terms, don't pay after the 7-day notice, or use the Services in a way that puts other customers, contacts or us at legal risk.</li>
+  <li>Sections 8, 12, 13, 14, 15 and 17 continue after the agreement ends.</li>
+</ul>
+
+<h2>12. Ownership and feedback</h2>
+<p>We own the Services, including the software, designs, templates and the Leadschilly name and logo. These terms give you the right to use the Services while your account is active; they don't transfer ownership. If you send us ideas or feedback, we may use them freely.</p>
+
+<h2>13. Confidentiality</h2>
+<p>Each of us will keep the other's non-public business information confidential and use it only for this agreement, except information that is already public, was already known, or must be disclosed by law.</p>
+
+<h2>14. Warranties and liability</h2>
+<ul>
+  <li>Except as written in these terms, the Services are provided "as is", without other promises, including about specific sales results, number of site visits or leads.</li>
+  <li>Neither side is liable for indirect or consequential losses, such as lost profits, lost deals or lost data that could have been avoided by exporting it.</li>
+  <li>Our total liability for all claims under this agreement is limited to the fees you paid us in the 12 months before the claim. This limit does not apply where the law does not allow it.</li>
+</ul>
+
+<h2>15. Your indemnity</h2>
+<p>You will cover our reasonable losses and costs from claims by others caused by the content you send through Leadschilly, the contact details you add without the right to use them, or your breach of section 6.</p>
+
+<h2>16. Events outside our control</h2>
+<p>Neither side is responsible for delays caused by events outside its reasonable control, such as outages of internet, power, Meta or telecom networks, natural disasters or government action.</p>
+
+<h2>17. Law and disputes</h2>
+{india
+  ? <p>These terms are governed by the laws of India. Courts in Bengaluru, Karnataka have exclusive jurisdiction. Before going to court, we will both try to resolve the dispute by talking for at least 30 days.</p>
+  : <p>These terms are governed by the laws of the State of Wyoming, USA, without regard to its conflict-of-law rules. Courts in Wyoming have exclusive jurisdiction. Before going to court, we will both try to resolve the dispute by talking for at least 30 days.</p>}
+
+<h2>18. Changes and notices</h2>
+<p>We may update these terms. For material changes, we email the account owner at least 30 days before they apply; if you don't agree, you can cancel before then. We send notices to the account owner's email address. You can send notices to admin@leadschilly.com.</p>
+
+<h2>19. Contact and grievances</h2>
+<p>{company}, {address}.<br>Email: <a href="mailto:admin@leadschilly.com">admin@leadschilly.com</a> · WhatsApp: 080 6217 8859</p>
+{india && <p>Grievance Officer under the Information Technology Act, 2000: Deepanshu Jain, at the address and email above. We acknowledge grievances within 48 hours and aim to resolve them within 30 days.</p>}

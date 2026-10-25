@@ -26,6 +26,10 @@ export const SITE = {
   ],
 }
 
+// Google Analytics 4 Measurement ID (starts with G-). Analytics stays off while this is empty.
+// TODO: Deepanshu to send it (Admin → Data streams → leadschilly.com web stream → Measurement ID).
+export const GA_ID = ''
+
 export const LINKS = {
   whatsappHi: 'https://wa.me/918062178859?text=Hi',
   whatsapp: 'https://wa.me/918062178859',

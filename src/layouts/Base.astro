@@ -3,7 +3,7 @@
 import '../styles/global.css'
 import Header from '../components/Header.astro'
 import Footer from '../components/Footer.astro'
-import { SITE } from '../config'
+import { SITE, GA_ID } from '../config'
 
 interface Props {
   title: string
@@ -58,6 +58,29 @@ const blocks = [org, website, ...schema]
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@leadschilly">
   {blocks.map((b) => <script type="application/ld+json" set:html={JSON.stringify(b)} />)}
+  {GA_ID && (
+    <>
+      <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${GA_ID}`}></script>
+      <script is:inline define:vars={{ GA_ID }}>
+        window.dataLayer = window.dataLayer || []
+        function gtag() { dataLayer.push(arguments) }
+        // EEA, UK and Switzerland: analytics cookies off by default (GDPR). Everyone else: on.
+        gtag('consent', 'default', { analytics_storage: 'denied', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied',
+          region: ['AT','BE','BG','HR','CY','CZ','DK','EE','FI','FR','DE','GR','HU','IE','IT','LV','LT','LU','MT','NL','PL','PT','RO','SK','SI','ES','SE','IS','LI','NO','GB','CH'] })
+        gtag('consent', 'default', { analytics_storage: 'granted', ad_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' })
+        gtag('js', new Date())
+        gtag('config', GA_ID)
+        // Count the buttons that matter: WhatsApp chats, pilot requests, demo bookings, app log-ins.
+        document.addEventListener('click', function (e) {
+          var a = e.target.closest && e.target.closest('a'); if (!a) return
+          var h = a.getAttribute('href') || '', label = (a.textContent || '').trim().slice(0, 60)
+          var name = h.indexOf('pilot') > -1 ? 'pilot_click' : h.indexOf('wa.me') > -1 ? 'whatsapp_click'
+            : (h.indexOf('#demo') > -1 || /demo/i.test(label)) ? 'demo_click' : h.indexOf('my.leadschilly.com') > -1 ? 'login_click' : ''
+          if (name) gtag('event', name, { link_text: label, page_path: location.pathname })
+        })
+      </script>
+    </>
+  )}
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
