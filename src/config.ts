@@ -52,7 +52,7 @@ export const NAV = [
 
 export const LEGAL = [
   { href: '/terms/', label: 'Terms (India)' },
-  { href: '/terms-international/', label: 'Terms (International)' },
+  // { href: '/terms-international/', label: 'Terms (International)' }, // on hold until the LLC is confirmed
   { href: '/privacy-policy/', label: 'Privacy policy' },
   { href: '/refund-policy/', label: 'Refund policy' },
   { href: '/data-protection/', label: 'Data protection (DPDP Act, India)' },

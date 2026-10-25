@@ -1,7 +1,6 @@
 ---
+// Text: Legal Counsel's reviewed clean copy (25 Oct 2026), in src/legal/terms.html. Edit there.
 import Legal from '../layouts/Legal.astro'
-import TermsBody from '../components/TermsBody.astro'
+import html from '../legal/terms.html?raw'
 ---
-<Legal title="Terms of Service (India)" description="Terms of service for businesses in India using Leadschilly, provided by Leadschilly Technologies Private Limited, Bengaluru.">
-  <TermsBody region="india" />
-</Legal>
+<Legal title="Terms of Service (India)" description="Terms of service for businesses in India using Leadschilly, provided by Leadschilly Technologies Private Limited, Bengaluru." html={html} />

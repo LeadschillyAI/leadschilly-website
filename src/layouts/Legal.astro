@@ -1,5 +1,5 @@
 ---
-// Legal pages. A page with draft=true shows a "being prepared" note and is hidden from Google until its text is final.
+// Legal pages. A page with draft=true shows only a "being prepared" note (its text is kept but not shown) and is hidden from Google.
 import Base from './Base.astro'
 interface Props { title: string; description: string; draft?: boolean; html?: string }
 const { title, description, draft = false, html } = Astro.props
@@ -9,11 +9,13 @@ const { title, description, draft = false, html } = Astro.props
     {draft && (
       <div class="draft-note">
         <h1 class="h2" style="margin-bottom: 16px;">{title}</h1>
-        <p class="lead">This page is being prepared. For any question about it, email <a href="mailto:admin@leadschilly.com">admin@leadschilly.com</a>.</p>
+        <p class="lead">This page is being prepared. Customers outside India: for terms, email <a href="mailto:admin@leadschilly.com">admin@leadschilly.com</a>.</p>
       </div>
     )}
-    <div class="prose">
-      {html ? <Fragment set:html={html} /> : <slot />}
-    </div>
+    {!draft && (
+      <div class="prose">
+        {html ? <Fragment set:html={html} /> : <slot />}
+      </div>
+    )}
   </section>
 </Base>
