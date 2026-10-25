@@ -3,6 +3,9 @@
 {
   "name": "leadschilly-website",
   "compatibility_date": "2026-09-01",
+  // Preview address: leadschilly-website.hostmyworld.workers.dev (leadschilly.com gets added at launch)
+  "workers_dev": true,
+  "preview_urls": true,
   "assets": {
     "directory": "./dist",
     "not_found_handling": "404-page",
