@@ -29,8 +29,8 @@ export const SITE = {
 }
 
 // Google Analytics 4 Measurement ID (starts with G-). Analytics stays off while this is empty.
-// TODO: Deepanshu to send it (Admin → Data streams → leadschilly.com web stream → Measurement ID).
-export const GA_ID = ''
+// Stream "leadschilly.com - GA4" in property 340446040 (sent by Deepanshu, 27 Oct 2026).
+export const GA_ID = 'G-DS81JJZWY7'
 
 // Is our own WhatsApp number (080 6217 8859) answered by the Leadschilly AI?
 // false (27 Oct 2026): the number is still on the WhatsApp Business phone app and a person replies, so the site
