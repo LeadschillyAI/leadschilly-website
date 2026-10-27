@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro'
 import { getCollection, render } from 'astro:content'
-import { LINKS, SITE } from '../../config'
+import { LINKS, SITE, AI_ON_OUR_NUMBER as AI } from '../../config'
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog', ({ data }) => !data.draft)
@@ -73,7 +73,7 @@ const faq = d.faqs.length
     <div class="cta-block" style="padding: 64px 24px;">
       <div class="inner" style="gap: 20px;">
         <h2 style="font-size: clamp(28px, 3.4vw, 40px);">See how fast your leads could be answered.</h2>
-        <p style="font-size: 17px;">Send "Hi" to {SITE.whatsappDisplay} and our AI will treat you like a buyer.</p>
+        <p style="font-size: 17px;">{AI ? `Send "Hi" to ${SITE.whatsappDisplay} and our AI will treat you like a buyer.` : `Send "Hi" to ${SITE.whatsappDisplay} and we'll show you how it works on your own leads.`}</p>
         <div class="btns" style="justify-content: center;">
           <a class="btn btn-lg btn-white" href={LINKS.whatsappHi}>Send "Hi" on WhatsApp</a>
           <a class="btn btn-lg btn-ghost-light" href={LINKS.demo}>Book a demo</a>

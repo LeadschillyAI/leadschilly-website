@@ -32,6 +32,11 @@ export const SITE = {
 // TODO: Deepanshu to send it (Admin → Data streams → leadschilly.com web stream → Measurement ID).
 export const GA_ID = ''
 
+// Is our own WhatsApp number (080 6217 8859) answered by the Leadschilly AI?
+// false (27 Oct 2026): the number is still on the WhatsApp Business phone app and a person replies, so the site
+// must not promise an AI reply. Set to true the day the number is connected in my.leadschilly.com with the AI on.
+export const AI_ON_OUR_NUMBER = false
+
 export const LINKS = {
   whatsappHi: 'https://wa.me/918062178859?text=Hi',
   whatsapp: 'https://wa.me/918062178859',

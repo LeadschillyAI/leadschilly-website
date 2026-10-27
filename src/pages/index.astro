@@ -1,7 +1,7 @@
 ---
 import Base from '../layouts/Base.astro'
 import PhoneChat from '../components/PhoneChat.astro'
-import { LINKS, SITE } from '../config'
+import { LINKS, SITE, AI_ON_OUR_NUMBER as AI } from '../config'
 
 const faqs = [
   { q: "Will my buyers know it's a bot?", a: 'It replies like a polite sales assistant, and hands the chat to your rep the moment a human is needed.' },
@@ -42,11 +42,11 @@ const icon = {
           <div class="btns" style="padding-top: 8px;">
             <a class="btn btn-lg btn-primary lift" href={LINKS.whatsappHi}>
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"></path></svg>
-              Send "Hi" and watch it reply
+              {AI ? 'Send "Hi" and watch it reply' : 'Chat with us on WhatsApp'}
             </a>
             <a class="btn btn-lg btn-white" href={LINKS.demo}>Book a 15-minute demo</a>
           </div>
-          <p class="small">Our AI will treat you like a buyer. Takes 2 minutes. No sign-up.</p>
+          <p class="small">{AI ? 'Our AI will treat you like a buyer. Takes 2 minutes. No sign-up.' : 'Ask us anything about your leads. No sign-up.'}</p>
         </div>
         <PhoneChat />
       </div>
@@ -168,10 +168,10 @@ const icon = {
     <div class="wrap stack gap-24">
       <div class="callout">
         <div>
-          <h2 class="h2" style="font-size: clamp(28px, 3vw, 40px);">Try it the way your buyer would.</h2>
-          <p class="body" style="font-size: 17px;">The fastest proof is the product itself. Send "Hi" to {SITE.whatsappDisplay} and judge the reply as a buyer would.</p>
+          <h2 class="h2" style="font-size: clamp(28px, 3vw, 40px);">{AI ? 'Try it the way your buyer would.' : 'See it on your own leads.'}</h2>
+          <p class="body" style="font-size: 17px;">{AI ? `The fastest proof is the product itself. Send "Hi" to ${SITE.whatsappDisplay} and judge the reply as a buyer would.` : `The fastest proof is your own leads. Message us on WhatsApp at ${SITE.whatsappDisplay} and we'll show you the AI answering them.`}</p>
         </div>
-        <a class="btn btn-lg btn-primary" href={LINKS.whatsappHi}>Try it on WhatsApp</a>
+        <a class="btn btn-lg btn-primary" href={LINKS.whatsappHi}>{AI ? 'Try it on WhatsApp' : 'Chat on WhatsApp'}</a>
       </div>
       <div class="stack gap-20" style="padding-top: 32px;">
         <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px;">
@@ -219,7 +219,7 @@ const icon = {
           <a class="btn btn-lg btn-white" href={LINKS.pilot}>Get a free 30-day pilot</a>
           <a class="btn btn-lg btn-ghost-light" href={LINKS.whatsappHi}>Book a 15-minute demo on WhatsApp</a>
         </div>
-        <a class="soft-link" href={LINKS.whatsappHi} style="font-size: 16px; font-weight: 600;">Or send "Hi" and watch it reply</a>
+        <a class="soft-link" href={LINKS.whatsappHi} style="font-size: 16px; font-weight: 600;">{AI ? 'Or send "Hi" and watch it reply' : 'Or just say "Hi" on WhatsApp'}</a>
       </div>
     </div>
   </section>
