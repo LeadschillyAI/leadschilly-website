@@ -33,7 +33,7 @@ const icon = {
 <Base title="WhatsApp AI for Real Estate Leads, Site Visits Booked | Leadschilly" schema={[faqSchema, appSchema]}>
 
   <section class="band hero">
-    <div class="band-inner bg-sky">
+    <div class="band-inner bg-navy on-dark">
       <div class="inner hero-grid">
         <div class="hero-copy">
           <p class="pill-tag">The AI sales team for real estate firms</p>
@@ -44,7 +44,7 @@ const icon = {
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8.5 8.5 0 0 1-12.6 7.4L3 21l1.6-5.2A8.5 8.5 0 1 1 21 12z"></path></svg>
               {AI ? 'Send "Hi" and watch it reply' : 'Chat with us on WhatsApp'}
             </a>
-            <a class="btn btn-lg btn-white" href={LINKS.demo}>Book a 15-minute demo</a>
+            <a class="btn btn-lg btn-ghost-light" href={LINKS.demo}>Book a 15-minute demo</a>
           </div>
           <p class="small">{AI ? 'Our AI will treat you like a buyer. Takes 2 minutes. No sign-up.' : 'Ask us anything about your leads. No sign-up.'}</p>
         </div>
@@ -71,27 +71,27 @@ const icon = {
       </div>
       <div class="row" style="width: 100%; text-align: left;">
         <div class="card card-raised">
-          <span class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={icon.moon} /></svg></span>
+          <span class="icon-tile tile-magenta"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={icon.moon} /></svg></span>
           <h3 class="h3">The 11 pm enquiry</h3>
           <p>Buyers browse at night. Your team replies at 10 am. By then they have called three other brokers.</p>
         </div>
         <div class="card card-raised">
-          <span class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={icon.phone} /></svg></span>
+          <span class="icon-tile tile-sky"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={icon.phone} /></svg></span>
           <h3 class="h3">The one-call follow-up</h3>
           <p>A rep calls once, nobody picks up, and the lead is forgotten. You paid for it anyway.</p>
         </div>
         <div class="card card-raised">
-          <span class="icon-tile"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={icon.clock} /></svg></span>
+          <span class="icon-tile tile-orange"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><Fragment set:html={icon.clock} /></svg></span>
           <h3 class="h3">The time-wasters</h3>
           <p>Your best reps spend the day on people with no budget, while serious buyers wait.</p>
         </div>
       </div>
-      <p class="punch">Every unanswered lead is ad money you have already spent.</p>
+      <p class="punch">Every unanswered lead is <span class="hl-mark">ad money you have already spent.</span></p>
     </div>
   </section>
 
   <section id="how" class="band">
-    <div class="band-inner bg-panel">
+    <div class="band-inner bg-warm">
       <div class="inner hero-grid" style="gap: 64px;">
         <div class="stack gap-40" style="flex: 999 1 480px; min-width: 0; gap: 36px;">
           <h2 class="h2">From enquiry to site visit, without anyone lifting a phone.</h2>
@@ -119,16 +119,16 @@ const icon = {
     <div class="wrap stack gap-40">
       <h2 class="h2 measure">Same leads. More site visits.</h2>
       <div class="row cols-4">
-        <div class="card card-grey"><span class="bar bar-magenta" aria-hidden="true"></span><h3>Every lead answered</h3><p>Nights, Sundays and festival weekends included.</p></div>
-        <div class="card card-grey"><span class="bar bar-blue" aria-hidden="true"></span><h3>Only serious buyers reach your reps</h3><p>Budget and timeline are asked before anyone picks up the phone.</p></div>
-        <div class="card card-grey"><span class="bar bar-orange" aria-hidden="true"></span><h3>More visits from the same ad spend</h3><p>You stop paying for leads that die in the inbox.</p></div>
-        <div class="card card-grey"><span class="bar bar-navy" aria-hidden="true"></span><h3>You see everything</h3><p>Every chat and every booked visit in one place, so you know which rep and which source is working.</p></div>
+        <div class="card card-magenta"><span class="bar bar-magenta" aria-hidden="true"></span><h3>Every lead answered</h3><p>Nights, Sundays and festival weekends included.</p></div>
+        <div class="card card-sky"><span class="bar bar-blue" aria-hidden="true"></span><h3>Only serious buyers reach your reps</h3><p>Budget and timeline are asked before anyone picks up the phone.</p></div>
+        <div class="card card-orange"><span class="bar bar-orange" aria-hidden="true"></span><h3>More visits from the same ad spend</h3><p>You stop paying for leads that die in the inbox.</p></div>
+        <div class="card card-navy"><span class="bar bar-orange" aria-hidden="true"></span><h3>You see everything</h3><p>Every chat and every booked visit in one place, so you know which rep and which source is working.</p></div>
       </div>
     </div>
   </section>
 
   <section id="discipline" class="band">
-    <div class="band-inner bg-sky">
+    <div class="band-inner bg-navy on-dark">
       <div class="inner stack gap-48">
         <div class="stack center gap-16">
           <p class="eyebrow">For owners and sales heads</p>
@@ -147,7 +147,7 @@ const icon = {
           <div class="card card-white"><span class="bar bar-orange" aria-hidden="true"></span><h3>One inbox for every conversation</h3><p>WhatsApp, website chat, calls and SMS sit together on every lead. When a rep leaves, the buyer history stays with your firm, not on their phone.</p></div>
           <div class="card card-white"><span class="bar bar-navy" aria-hidden="true"></span><h3>Leads arrive on their own</h3><p>99acres, MagicBricks, Housing.com, Facebook and Instagram lead ads, your website forms and chat, and tools like Make.com connect once. Leads land in seconds and go straight to the right rep.</p></div>
         </div>
-        <p class="punch" style="text-align: center;">Follow-ups that happen on time turn into site visits. Site visits turn into closings.</p>
+        <p class="punch" style="text-align: center;">Follow-ups that happen on time turn into site visits. <span class="hl">Site visits turn into closings.</span></p>
       </div>
     </div>
   </section>
@@ -156,9 +156,9 @@ const icon = {
     <div class="wrap stack gap-40">
       <h2 class="h2 measure">Built for the people who live on property leads.</h2>
       <div class="row">
-        <div class="card card-grey" style="padding: 32px;"><span class="bar bar-magenta" aria-hidden="true"></span><h3>Brokers and consultants</h3><p>You can't answer 200 WhatsApp enquiries and still do site visits.</p></div>
-        <div class="card card-grey" style="padding: 32px;"><span class="bar bar-blue" aria-hidden="true"></span><h3>Channel partners</h3><p>You run ads for many projects, and every lead looks the same until someone talks to them.</p></div>
-        <div class="card card-grey" style="padding: 32px;"><span class="bar bar-orange" aria-hidden="true"></span><h3>Developer sales teams</h3><p>Your call centre goes home at 7 pm. Your buyers don't.</p></div>
+        <div class="card card-top accent-magenta"><h3>Brokers and consultants</h3><p>You can't answer 200 WhatsApp enquiries and still do site visits.</p></div>
+        <div class="card card-top accent-blue"><h3>Channel partners</h3><p>You run ads for many projects, and every lead looks the same until someone talks to them.</p></div>
+        <div class="card card-top accent-orange"><h3>Developer sales teams</h3><p>Your call centre goes home at 7 pm. Your buyers don't.</p></div>
       </div>
       <p class="body">Works anywhere your buyers use WhatsApp.</p>
     </div>
@@ -171,7 +171,7 @@ const icon = {
           <h2 class="h2" style="font-size: clamp(28px, 3vw, 40px);">{AI ? 'Try it the way your buyer would.' : 'See it on your own leads.'}</h2>
           <p class="body" style="font-size: 17px;">{AI ? `The fastest proof is the product itself. Send "Hi" to ${SITE.whatsappDisplay} and judge the reply as a buyer would.` : `The fastest proof is your own leads. Message us on WhatsApp at ${SITE.whatsappDisplay} and we'll show you the AI answering them.`}</p>
         </div>
-        <a class="btn btn-lg btn-primary" href={LINKS.whatsappHi}>{AI ? 'Try it on WhatsApp' : 'Chat on WhatsApp'}</a>
+        <a class="btn btn-lg btn-navy" href={LINKS.whatsappHi}>{AI ? 'Try it on WhatsApp' : 'Chat on WhatsApp'}</a>
       </div>
       <div class="stack gap-20" style="padding-top: 32px;">
         <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 12px;">
@@ -192,7 +192,7 @@ const icon = {
   </section>
 
   <section class="band">
-    <div class="band-inner bg-panel">
+    <div class="band-inner bg-sky">
       <div class="inner stack gap-40">
         <h2 class="h2" style="text-align: center;">Questions brokers ask us</h2>
         <div class="row cols-2" style="gap: 16px;">
@@ -216,7 +216,7 @@ const icon = {
         <h2>A new lead is coming in right now. Who's answering it?</h2>
         <p style="font-size: 18px; max-width: 640px;">Try Leadschilly free for 30 days on your own leads. We set it up with you, and you keep it only if it books you more site visits.</p>
         <div class="btns" style="justify-content: center;">
-          <a class="btn btn-lg btn-white" href={LINKS.pilot}>Get a free 30-day pilot</a>
+          <a class="btn btn-lg btn-primary lift" href={LINKS.pilot}>Get a free 30-day pilot</a>
           <a class="btn btn-lg btn-ghost-light" href={LINKS.whatsappHi}>Book a 15-minute demo on WhatsApp</a>
         </div>
         <a class="soft-link" href={LINKS.whatsappHi} style="font-size: 16px; font-weight: 600;">{AI ? 'Or send "Hi" and watch it reply' : 'Or just say "Hi" on WhatsApp'}</a>
