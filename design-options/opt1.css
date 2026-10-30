@@ -1,0 +1,20 @@
+/* Option 1: Clean white. White page, orange buttons, whisper-light sky sections, thin outlines. */
+.btn-primary { background: var(--orange); color: var(--navy); box-shadow: 0 6px 16px rgba(252,159,33,.25); }
+.btn-primary:hover { background: #f28c00; color: var(--navy); }
+.hero .band-inner { background: #fff; padding-top: 48px; }
+.hero { position: relative; }
+.hero .band-inner::before { content: ''; position: absolute; inset: 0; pointer-events: none; z-index: -1; }
+.pill-tag { background: var(--sky); color: var(--ai); box-shadow: none; }
+.bg-panel { background: #f7fafd; }
+.bg-sky { background: #f0f7fd; }
+.card-raised { box-shadow: none; border: 1px solid var(--line); }
+.card-grey { background: #fff; border: 1px solid var(--line); }
+.card-white { border: 1px solid var(--line); }
+.step-num { background: var(--orange); color: var(--navy); }
+.callout { background: var(--navy); color: #fff; }
+.callout .h2, .callout .body { color: #fff; }
+.callout .btn-primary { background: var(--orange); color: var(--navy); }
+.cta-block { background: var(--navy); }
+.cta-block .btn-white { background: var(--orange); color: var(--navy); }
+.stats { box-shadow: none; border: 1px solid var(--line); margin-top: 24px; }
+.eyebrow { color: var(--ai); }
