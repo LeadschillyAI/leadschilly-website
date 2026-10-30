@@ -48,7 +48,7 @@ export const LINKS = {
 }
 
 export const NAV = [
-  { href: '/#how', label: 'How it works' },
+  { href: '/how-it-works/', label: 'How it works' },
   { href: '/#discipline', label: 'For owners' },
   { href: '/#who', label: "Who it's for" },
   { href: '/pricing/', label: 'Pricing' },

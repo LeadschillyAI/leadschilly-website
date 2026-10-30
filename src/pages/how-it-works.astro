@@ -1,0 +1,267 @@
+---
+// How it works: one lead's journey from enquiry to site visit, and who does what at each handover.
+// Every claim here is a live feature (app README). Nothing "coming soon" except where tagged.
+import Base from '../layouts/Base.astro'
+import { LINKS, SITE } from '../config'
+
+const faqs = [
+  { q: "Will buyers know they're talking to AI?", a: 'The first reply says it is the assistant for your firm. It replies like a polite sales assistant, and the moment a buyer asks for a person, or your rep types a reply, the AI steps back for that lead.' },
+  { q: 'Can my rep take over mid-chat?', a: 'Yes. The rep replies from the Leadschilly inbox or the Android app, and the AI switches off for that lead automatically. The rep sees the whole chat, so nothing is asked twice.' },
+  { q: 'What if the buyer wants to call?', a: "The buyer's number is on the lead. Your rep calls in one click through your calling provider on a laptop, or from the phone's dialler on mobile. The call, its outcome and notes stay on the same lead." },
+  { q: 'Which lead sources connect?', a: '99acres, MagicBricks and Housing.com enquiry emails, Facebook and Instagram lead ads, your website forms and chat widget, WhatsApp, missed calls, and any tool that can send a lead, such as Make.com or n8n.' },
+  { q: 'Does my team have to change phones or numbers?', a: 'No. WhatsApp runs on your business number through Meta. Calls go through your existing calling provider. Reps keep their phones.' },
+  { q: 'How long does setup take?', a: 'Most firms are live within a week: share your projects and qualifying questions, connect WhatsApp and lead sources, and start the free 30-day pilot on your own leads.' },
+]
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
+}
+const howSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'HowTo',
+  name: 'How Leadschilly turns a property lead into a site visit',
+  step: [
+    { '@type': 'HowToStep', name: 'A lead comes in', text: 'From a property portal, a Facebook or Instagram ad, your website or WhatsApp.' },
+    { '@type': 'HowToStep', name: 'The AI replies on WhatsApp in seconds', text: 'It asks budget, location, size and timeline.' },
+    { '@type': 'HowToStep', name: 'It books the site visit', text: 'The buyer picks a slot on your calendar. Reminders go out on their own.' },
+    { '@type': 'HowToStep', name: 'Your rep takes over', text: 'The rep gets the visit, the answers and the full chat.' },
+    { '@type': 'HowToStep', name: 'Results go back to your ads', text: 'Qualified leads and booked visits are sent back to Meta, so your ads find more buyers like them.' },
+  ],
+}
+const stops = [
+  { n: 1, who: 'Lead', title: 'A lead comes in', text: '99acres, MagicBricks, Housing.com, Facebook and Instagram ads, your website, a missed call, or a WhatsApp "Hi".' },
+  { n: 2, who: 'AI agent', title: 'Replies on WhatsApp in seconds', text: 'Day or night. It asks what a good rep would ask: budget, location, size, and when they want to move.' },
+  { n: 3, who: 'AI agent', title: 'Books the site visit or a video call', text: 'The buyer picks a slot on your calendar. Confirmation and reminders go out on their own.' },
+  { n: 4, who: 'Your rep', title: 'Takes over with everything in hand', text: 'The visit, the buyer\'s answers and the full chat land on the rep\'s My Day. One click to call.' },
+  { n: 5, who: 'Your ads', title: 'Learn from the result', text: 'Qualified, visited, booked or lost goes back to Meta, so your ads find more buyers like the ones who visited.' },
+]
+---
+<Base title="How Leadschilly Works: From Enquiry to Site Visit | Leadschilly" description="One property lead, five stops. See what the AI sales agent does, what your rep does, and what the owner sees, from the first WhatsApp reply to the booked site visit." schema={[faqSchema, howSchema]} current="/how-it-works/">
+
+  <section class="band">
+    <div class="band-inner bg-sky" style="padding: 64px 24px 72px;">
+      <div class="inner stack center gap-16">
+        <p class="eyebrow">How it works</p>
+        <h1 class="h1" style="max-width: 900px;">One lead. Five stops. <span class="underline-orange">No one chasing.</span></h1>
+        <p class="lead" style="max-width: 720px;">The AI sales agent handles the first conversation. Your reps handle the buyers who are ready. Here is exactly who does what, and where the handover happens.</p>
+        <div class="btns" style="justify-content: center; padding-top: 8px;">
+          <a class="btn btn-lg btn-primary lift" href={LINKS.pilot}>Get a free 30-day pilot</a>
+          <a class="btn btn-lg btn-white" href={LINKS.demo}>Book a 15-minute demo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top: 80px;">
+    <div class="wrap stack gap-40">
+      <div class="stack gap-12">
+        <h2 class="h2 measure">The AI agent on top. Your sales desk underneath.</h2>
+        <p class="lead measure">Two layers, one product. The agent talks to buyers. The desk is where your team works, with every chat, call and visit on one lead.</p>
+      </div>
+      <div class="layers">
+        <div class="layer layer-ai">
+          <span class="layer-tag">AI sales agent</span>
+          <div class="chips">
+            <span class="chip">Replies on WhatsApp in seconds</span>
+            <span class="chip">Asks budget, location, size, timeline</span>
+            <span class="chip">Books site visits and video calls</span>
+            <span class="chip">Hands over the moment a person is needed</span>
+            <span class="chip chip-soon">AI voice calls <em>coming soon</em></span>
+          </div>
+        </div>
+        <div class="layer-join" aria-hidden="true"></div>
+        <div class="layer layer-desk">
+          <span class="layer-tag">Your sales desk</span>
+          <div class="chips">
+            <span class="chip">One inbox: WhatsApp, chat, calls, SMS</span>
+            <span class="chip">My Day for reps, Team Board for managers, Cockpit for owners</span>
+            <span class="chip">Calendar and reminders</span>
+            <span class="chip">Click-to-call with recordings</span>
+            <span class="chip">Leads from portals, ads, website</span>
+            <span class="chip">Follow-up automations</span>
+            <span class="chip">Reports by rep and by source</span>
+            <span class="chip">Android app</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-inner bg-warm">
+      <div class="inner stack gap-40">
+        <div class="stack gap-12">
+          <h2 class="h2 measure">Follow one lead through.</h2>
+          <p class="lead measure">An enquiry at 11:42 pm on a Tuesday. Here is what happens, and who does it.</p>
+        </div>
+        <ol class="journey">
+          {stops.map((s) => (
+            <li class={`stop stop-${s.who.toLowerCase().replace(/[^a-z]/g, '')}`}>
+              <span class="stop-num">{s.n}</span>
+              <span class="stop-who">{s.who}</span>
+              <h3 class="h3">{s.title}</h3>
+              <p class="body">{s.text}</p>
+            </li>
+          ))}
+        </ol>
+        <p class="punch">The buyer never waits. The rep never chases. The owner sees all of it.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap stack gap-48">
+      <div class="stack gap-12">
+        <h2 class="h2 measure">Three handovers, and what each side sees.</h2>
+        <p class="lead measure">The value is in the handover. Nothing is asked twice, nothing is lost on someone's phone.</p>
+      </div>
+
+      <div class="hand">
+        <div class="hand-copy">
+          <span class="bar bar-magenta" aria-hidden="true"></span>
+          <h3 class="h3">AI agent → your rep</h3>
+          <p class="body">The AI qualifies and books. The rep opens My Day and sees the visit, the buyer's budget, location and timeline, and the full chat. If the rep types a reply, the AI steps back for that lead.</p>
+          <ul class="ticks">
+            <li>Budget, BHK, location and timeline saved on the lead</li>
+            <li>Site visit on the rep's calendar with reminders</li>
+            <li>One click to call through your calling provider</li>
+          </ul>
+        </div>
+        <div class="hand-art" aria-hidden="true">
+          <div class="mini mini-chat">
+            <div class="mini-head">AI assistant · WhatsApp</div>
+            <div class="mini-msg in">Around 1.2 Cr, 3BHK, Whitefield. Moving in 6 months.</div>
+            <div class="mini-msg out">Got it. Saturday 11 am at the site works?</div>
+            <div class="mini-msg in">Yes.</div>
+            <div class="mini-ok">Site visit booked · Sat 11:00</div>
+          </div>
+          <span class="mini-arrow">→</span>
+          <div class="mini mini-card">
+            <div class="mini-head">My Day · Rahul</div>
+            <div class="mini-row"><strong>Priya S.</strong><span>Site visit Sat 11:00</span></div>
+            <div class="mini-row"><span>Budget 1.2 Cr · 3BHK · Whitefield · 6 months</span></div>
+            <div class="mini-row"><span class="mini-pill">Full chat</span><span class="mini-pill">Call</span><span class="mini-pill">Directions</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hand hand-flip">
+        <div class="hand-copy">
+          <span class="bar bar-blue" aria-hidden="true"></span>
+          <h3 class="h3">Your rep → the owner</h3>
+          <p class="body">Every reply, call and visit outcome is logged as it happens, so the owner doesn't have to ask. Team Board shows reply speed, overdue follow-ups and visits per rep, week on week.</p>
+          <ul class="ticks">
+            <li>Reply speed and overdue follow-ups by rep</li>
+            <li>Calls with outcomes, recordings on the lead</li>
+            <li>Which source and which project is converting</li>
+          </ul>
+        </div>
+        <div class="hand-art" aria-hidden="true">
+          <div class="mini mini-card">
+            <div class="mini-head">Team Board · this week</div>
+            <div class="mini-row"><span>Rahul</span><span class="mini-good">Reply 4 min · 6 visits</span></div>
+            <div class="mini-row"><span>Meera</span><span class="mini-good">Reply 9 min · 4 visits</span></div>
+            <div class="mini-row"><span>Arjun</span><span class="mini-warn">3 overdue follow-ups</span></div>
+          </div>
+          <span class="mini-arrow">→</span>
+          <div class="mini mini-card">
+            <div class="mini-head">Business Cockpit</div>
+            <div class="mini-row"><span>Best source this month</span><strong>Meta ads</strong></div>
+            <div class="mini-row"><span>Visits from Housing.com</span><strong>falling</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hand">
+        <div class="hand-copy">
+          <span class="bar bar-orange" aria-hidden="true"></span>
+          <h3 class="h3">Your results → your ads</h3>
+          <p class="body">When a lead is qualified, visits or books, Leadschilly tells Meta. Your ads stop optimising for form fills and start optimising for buyers who actually show up.</p>
+          <ul class="ticks">
+            <li>Qualified, site visit, booked, lost and junk sent back to Meta</li>
+            <li>Lead quality by campaign, ad set and ad</li>
+            <li>Cost per site visit by source, not cost per lead</li>
+          </ul>
+        </div>
+        <div class="hand-art" aria-hidden="true">
+          <div class="mini mini-card">
+            <div class="mini-head">Lead · Priya S.</div>
+            <div class="mini-row"><span>Qualified</span><span class="mini-good">✓</span></div>
+            <div class="mini-row"><span>Site visit done</span><span class="mini-good">✓</span></div>
+            <div class="mini-row"><span>Booked</span><span class="mini-good">✓</span></div>
+          </div>
+          <span class="mini-arrow">→</span>
+          <div class="mini mini-card">
+            <div class="mini-head">Meta ads</div>
+            <div class="mini-row"><span>Find more buyers like Priya</span></div>
+            <div class="mini-row"><span class="mini-pill">Conversions API</span></div>
+          </div>
+        </div>
+      </div>
+      <p class="tiny">Screens are simplified drawings of Leadschilly, with sample names.</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-inner bg-panel">
+      <div class="inner stack gap-40">
+        <div class="stack gap-12 center" style="text-align: center;">
+          <h2 class="h2">What changes for your firm</h2>
+          <p class="lead" style="max-width: 680px;">Most firms run leads through a WhatsApp group and a spreadsheet. Here is the difference, line by line.</p>
+        </div>
+        <div class="cmp">
+          <table>
+            <thead><tr><th scope="col">The question</th><th scope="col">WhatsApp group and a sheet</th><th scope="col" class="cmp-us">With Leadschilly</th></tr></thead>
+            <tbody>
+              <tr><th scope="row">Who replies to the 11 pm enquiry?</th><td>Whoever is awake, tomorrow</td><td class="cmp-us">The AI agent, in seconds</td></tr>
+              <tr><th scope="row">Who asks budget and timeline?</th><td>The rep, on the first call, if they reach</td><td class="cmp-us">Asked and saved before anyone calls</td></tr>
+              <tr><th scope="row">How does a site visit get booked?</th><td>Back and forth on chat</td><td class="cmp-us">Buyer picks a slot; reminders go out on their own</td></tr>
+              <tr><th scope="row">Where does the chat live when a rep leaves?</th><td>On their phone</td><td class="cmp-us">On the lead, with your firm</td></tr>
+              <tr><th scope="row">Which source is working?</th><td>A guess at month end</td><td class="cmp-us">Visits and bookings by source, every day</td></tr>
+              <tr><th scope="row">What do your ads learn?</th><td>Who filled a form</td><td class="cmp-us">Who visited and who booked</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap stack gap-40">
+      <h2 class="h2 measure">Live in a week.</h2>
+      <div class="row">
+        <div class="card card-top accent-magenta"><span class="tiny">Day 1</span><h3>Share what you sell</h3><p>Your projects, price ranges, and the questions a good rep asks. We set up the AI with them.</p></div>
+        <div class="card card-top accent-blue"><span class="tiny">Day 2 to 3</span><h3>Connect your sources</h3><p>WhatsApp on your business number, portal enquiry emails, Meta lead ads, website forms. Reps keep their phones.</p></div>
+        <div class="card card-top accent-orange"><span class="tiny">Day 4 onwards</span><h3>Start the free 30-day pilot</h3><p>On your own leads. Keep it only if it books you more site visits.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="band-inner bg-sky">
+      <div class="inner stack gap-40">
+        <h2 class="h2" style="text-align: center;">Questions sales heads ask</h2>
+        <div class="row cols-2" style="gap: 16px;">
+          {faqs.map((f) => (
+            <div class="faq-item"><h3>{f.q}</h3><p class="body" style="font-size: 15px;">{f.a}</p></div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="padding: 96px 16px;">
+    <div class="cta-block">
+      <div class="inner">
+        <h2>See it on your own leads.</h2>
+        <p style="font-size: 18px; max-width: 640px;">Free for 30 days. We set it up with you, and you keep it only if it books you more site visits.</p>
+        <div class="btns" style="justify-content: center;">
+          <a class="btn btn-lg btn-primary lift" href={LINKS.pilot}>Get a free 30-day pilot</a>
+          <a class="btn btn-lg btn-ghost-light" href={LINKS.whatsappHi}>Chat with us on WhatsApp</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</Base>
