@@ -37,7 +37,7 @@ const icon = {
       <div class="inner hero-grid">
         <div class="hero-copy">
           <p class="pill-tag">Your AI sales agent for real estate</p>
-          <h1 class="h1">More <span class="underline-orange">site visits</span> from the leads you already pay for.</h1>
+          <h1 class="h1">More <span class="underline-orange rotate" data-phrases='["site visits","booked calendars","serious buyers","closings","site visits on weekdays","replies at 11 pm"]'>site visits</span> from the leads you already pay for.</h1>
           <p class="lead" style="font-size: 20px; max-width: 600px;">Leadschilly's AI sales agent replies to every property lead on WhatsApp in seconds, qualifies the buyer and books the site visit on your rep's calendar. Your team starts each morning with visits already booked.</p>
           <div class="btns" style="padding-top: 8px;">
             <a class="btn btn-lg btn-primary lift" href={LINKS.whatsappHi}>
@@ -224,4 +224,16 @@ const icon = {
     </div>
   </section>
 
+<script is:inline>
+  // One fixed headline for Google; only the orange phrase changes, every 3 seconds. Off when the visitor prefers less motion.
+  (function () {
+    var el = document.querySelector('.rotate'); if (!el) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    var list = JSON.parse(el.getAttribute('data-phrases')), i = 0
+    setInterval(function () {
+      el.classList.add('out')
+      setTimeout(function () { i = (i + 1) % list.length; el.textContent = list[i]; el.classList.remove('out') }, 350)
+    }, 3000)
+  })()
+</script>
 </Base>
